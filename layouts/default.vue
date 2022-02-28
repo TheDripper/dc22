@@ -1,27 +1,6 @@
 <template>
   <div>
-    <div id="header" v-html="header"></div>
     <Nuxt />
-    <div id="footer">
-      <div
-        class="
-          w-full
-          mx-auto
-          flex flex-col
-          md:flex-row
-          justify-between
-          items-between
-        "
-        v-html="footer"
-      ></div>
-    </div>
-    <script
-      type="text/javascript"
-      id="hs-script-loader"
-      async
-      defer
-      src="//js.hs-scripts.com/20008151.js"
-    ></script>
   </div>
 </template>
 

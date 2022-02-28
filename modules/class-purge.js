@@ -19,7 +19,15 @@ export default async function asyncModule() {
     fse.writeFile("./static/classes.json", JSON.stringify(classes));
 
     let words = await csv().fromFile("./static/words.csv");
-    console.log('words',words);
+    let wordsary = [];
+    for (let word in words) {
+      let sent = words[word].Name.split(" ");
+      for (let single of sent) {
+        wordsary.push(single);
+      }
+      // wordsary.push(words[word].Name);
+    }
+    fse.writeFile("./static/words.json", JSON.stringify(wordsary));
   } catch (err) {
     console.log(err);
   }

@@ -1,8 +1,10 @@
 import classes from "~/static/classes.json";
+import words from "~/static/words.json";
 import wpapi from "wpapi";
 import { decode } from "html-entities";
 import $ from "cheerio";
 export const state = () => ({
+  words: null,
   news: null,
   featNews: [],
   header: null,
@@ -30,6 +32,9 @@ export const state = () => ({
 export const mutations = {
   news(state, news) {
     state.news = news;
+  },
+  words(state, words) {
+    state.words = words;
   },
   featNews(state, featNews) {
     state.featNews = featNews;
@@ -178,7 +183,6 @@ export const actions = {
     }
     slugs["urls"] = urls;
     slugs["authors"] = authors;
-    console.log("slugs", slugs);
     commit("pages", slugs);
 
     const home = await wp.pages().id(7).get();
@@ -252,5 +256,6 @@ export const actions = {
     //   commit("posts", pages);
     // }
     commit("classes", classes);
+    commit("words", words);
   },
 };
