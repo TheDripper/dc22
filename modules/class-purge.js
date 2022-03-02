@@ -23,7 +23,10 @@ export default async function asyncModule() {
     for (let word in words) {
       let sent = words[word].Name.split(" ");
       for (let single of sent) {
-        wordsary.push(single);
+        let letters = Array.from(single);
+        for (let letter of letters) {
+          wordsary.push(letter);
+        }
       }
       // wordsary.push(words[word].Name);
     }

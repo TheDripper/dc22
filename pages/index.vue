@@ -1,7 +1,8 @@
 <template>
   <div id="root" class="bg-back-grey">
     <div :class="classes"></div>
-    <div class="flex h-screen v-screen overflow-hidden flex-wrap">
+    <div id="square"></div>
+    <div id="words" class="flex h-screen v-screen overflow-scroll flex-wrap">
       <p v-for="word in words">{{ word }}</p>
     </div>
   </div>
@@ -60,8 +61,6 @@ export default {
   },
   created() {},
   mounted() {
-    
-      console.log('colors',colors);
     $(".to-top").on("click", function (e) {
       // const offset = $(".community").offset().top;
       $("html,body").animate({ scrollTop: 0 }, 500);
@@ -111,7 +110,46 @@ export default {
 };
 </script>
 <style lang="scss">
+#words {
+  background: blue;
+  @apply relative z-20;
+}
+
+#square {
+  width: 40vw;
+  height: 40vw;
+  @apply fixed z-10;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #ff00ff;
+}
 p {
-  color: #00ff00;
+  color: white;
+  font-family: "vcr";
+  padding: 2px;
+  font-size: 18px;
+  &:nth-child(even) {
+    animation: 1s infinite alternate spin;
+  }
+  &:nth-child(odd) {
+    animation: 1.33s infinite alternate spinback;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinback {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }
 </style>

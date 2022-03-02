@@ -28,7 +28,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["@/assets/style.min.css", "@/static/slick.css"],
+  css: ["@/assets/style.min.css", "@/static/slick.css", "@/static/fonts.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
