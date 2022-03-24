@@ -175,6 +175,13 @@ export default {
 };
 </script>
 <style lang="scss">
+.unmute {
+  @apply absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-shadow: 2px 2px 0 #00ff00;
+}
 .done {
   opacity: 0;
 }

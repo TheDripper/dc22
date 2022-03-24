@@ -49,6 +49,18 @@ export default {
     // $("a").each(function () {
     //   $(this).attr("target", "_blank");
     // });
+    $(".unmute").on("click", function () {
+      if ($(this).hasClass("unmuted")) {
+        $(this).removeClass("unmuted");
+        $(".night").find("video").prop("muted", "muted");
+      } else {
+        $(".night").find("video").attr("muted", "");
+        let night = $(".night").find("video");
+        console.log($(night).prop("muted"));
+        $(".night").find("video").prop("muted", "");
+        $(this).addClass("unmuted");
+      }
+    });
     let master = $(".scroller").find("img").attr("src");
     $(window).on("scroll", function (e) {
       if ($(window).innerWidth() > 767) {
@@ -161,7 +173,7 @@ export default {
       return this.$store.state.home;
     },
     slug() {
-      return 'home';
+      return "home";
     },
     header() {
       return this.$store.state.header;
@@ -176,6 +188,17 @@ export default {
 };
 </script>
 <style lang="scss">
+.unmuted {
+  opacity: 0.2;
+  transform: skew(33deg);
+}
+.unmute {
+  transition: all 0.2s ease;
+  @apply absolute cursor-pointer;
+  right: 50px;
+  bottom: 50px;
+  width: 150px;
+}
 .done {
   opacity: 0;
 }
