@@ -188,6 +188,13 @@ export default {
 };
 </script>
 <style lang="scss">
+.night {
+  video {
+    width: auto !important;
+    height: 100vh !important;
+    max-width: none !important;
+  }
+}
 .unmuted {
   opacity: 0.2;
   transform: skew(33deg);
@@ -197,7 +204,7 @@ export default {
   @apply absolute cursor-pointer;
   right: 50px;
   bottom: 50px;
-  width: 150px;
+  width: 15%;
 }
 .done {
   opacity: 0;
