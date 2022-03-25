@@ -46,6 +46,7 @@ export default {
   },
   created() {},
   mounted() {
+
     // $("a").each(function () {
     //   $(this).attr("target", "_blank");
     // });
@@ -61,7 +62,7 @@ export default {
         $(this).addClass("unmuted");
       }
     });
-    let master = $(".scroller").find("img").attr("src");
+    let master = $(".scroller").find("video").attr("src");
     $(window).on("scroll", function (e) {
       if ($(window).innerWidth() > 767) {
         console.log($(window).innerWidth());
@@ -77,57 +78,57 @@ export default {
         one = one - winHeight;
         let two = $("#two-copy").offset().top;
         two = two - winHeight;
-        let three = $("#three-copy").offset().top;
-        three = three - winHeight;
-        let four = $("#four-copy").offset().top;
-        four = four - winHeight;
-        let five = $("#five-copy").offset().top;
-        five = five - winHeight;
-        let six = $("#six-copy").offset().top;
-        six = six - winHeight;
+        // let three = $("#three-copy").offset().top;
+        // three = three - winHeight;
+        // let four = $("#four-copy").offset().top;
+        // four = four - winHeight;
+        // let five = $("#five-copy").offset().top;
+        // five = five - winHeight;
+        // let six = $("#six-copy").offset().top;
+        // six = six - winHeight;
         // let masterImg = $('img').attr('src',master);
-        $(".scroller").find("img").attr("srcset", null);
+        $(".scroller").find("video").attr("srcset", null);
         let scrolly = $(document).scrollTop();
         if (scrolly > height) {
           $(".scroller").addClass("scrolling");
         } else {
           $(".scroller").removeClass("scrolling");
           console.log("master", master);
-          $(".scroller").find("img").attr("src", master);
+          $(".scroller").find("video").attr("src", master);
         }
         if (scrolly > one) {
-          let target = $("#one").find("img").attr("src");
+          let target = $("#one").find("video").attr("src");
           console.log("one", target);
-          $(".scroller").find("img").attr("src", target);
+          $(".scroller").find("video").attr("src", target);
         }
         if (scrolly > two) {
-          let target = $("#two").find("img").attr("src");
+          let target = $("#two").find("video").attr("src");
           console.log("two", target);
-          $(".scroller").find("img").attr("src", target);
+          $(".scroller").find("video").attr("src", target);
         }
-        if (scrolly > three) {
-          let target = $("#three").find("img").attr("src");
-          console.log("three", target);
-          $(".scroller").find("img").attr("src", target);
-        }
+        // if (scrolly > three) {
+        //   let target = $("#three").find("video").attr("src");
+        //   console.log("three", target);
+        //   $(".scroller").find("video").attr("src", target);
+        // }
 
-        if (scrolly > four) {
-          let target = $("#four").find("img").attr("src");
-          console.log("four", target);
-          $(".scroller").find("img").attr("src", target);
-        }
+        // if (scrolly > four) {
+        //   let target = $("#four").find("video").attr("src");
+        //   console.log("four", target);
+        //   $(".scroller").find("video").attr("src", target);
+        // }
 
-        if (scrolly > five) {
-          let target = $("#five").find("img").attr("src");
-          console.log("five", target);
-          $(".scroller").find("img").attr("src", target);
-        }
+        // if (scrolly > five) {
+        //   let target = $("#five").find("video").attr("src");
+        //   console.log("five", target);
+        //   $(".scroller").find("video").attr("src", target);
+        // }
 
-        if (scrolly > six) {
-          let target = $("#six").find("img").attr("src");
-          console.log("six", target);
-          $(".scroller").find("img").attr("src", target);
-        }
+        // if (scrolly > six) {
+        //   let target = $("#six").find("video").attr("src");
+        //   console.log("six", target);
+        //   $(".scroller").find("video").attr("src", target);
+        // }
         if (scrolly > bottom) {
           // let target = $('#six').find('img').attr('src');
           // console.log('six',target);
@@ -141,7 +142,7 @@ export default {
       // if(scrolly < height) {
       //   console.log('top',master);
       //   $(".scroller").removeClass("scrolling");
-      //   $(".scroller").find("img").fadeOut(200).remove();
+      //   $(".scroller").find("video").fadeOut(200).remove();
       // }
       // if (scrolly > two) {
       //   let src = $('#two').attr('src');
@@ -188,6 +189,23 @@ export default {
 };
 </script>
 <style lang="scss">
+h1 {
+  font-family: "vcr";
+    text-shadow: 2px 2px 0px black, -2px -2px 0px black, -2px 2px 0px black, 2px -2px 0 black;
+    &:hover {
+    text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ff00, -2px 2px 0px #00ffff, 2px -2px 0 black;
+    color: black !important;
+    transition: all 0.3s linear;
+
+    }
+  &#depression-1998 {
+    font-size: 5vw;
+    @apply absolute cursor-pointer;
+    top: 50%;
+    left: 50%;
+  }
+
+}
 .night {
   video {
     width: auto !important;
@@ -230,7 +248,7 @@ export default {
 }
 .scroll-pane {
   @apply flex items-center justify-center;
-  img {
+  img, video {
     width: 315px;
     transform: translate(47px);
     opacity: 0;
@@ -239,7 +257,14 @@ export default {
 }
 html,
 body {
-  font-family: "Roboto";
+  font-family: "vcr";
+  p {
+    @apply p-2 rounded-full;
+    background: blue;
+    color: black !important;;
+    font-size: 3vw;
+    text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ff00, -2px 2px 0px #00ffff, 2px -2px 0 black;
+  }
 }
 input,
 select,
@@ -273,7 +298,8 @@ form {
 .wp-block-columns {
   @apply pt-48 px-0 max-w-5xl mx-auto;
   h4 {
-    @apply text-sand font-bold uppercase mb-4;
+    @apply font-bold uppercase mb-4;
+    color: #008080;
     font-size: 14px;
     @screen xl {
       font-size: 18px;
@@ -416,19 +442,20 @@ form {
   overflow: visible;
   margin: 0 !important;
   margin-top: 160px !important;
-  width: 323px;
-  height: 544px;
+  // width: 323px;
+  // height: 544px;
   min-height: 544px;
   background: url("/bridge.png");
-  background-size: 225px;
+  // background-size: 225px;
   background-repeat: no-repeat;
   background-position: 0 0;
   figure {
     @apply m-0;
+    transition: all 0.5s ease-in-out;
     transform: translate(47px, -71px);
-    width: 225px;
-    height: 473px;
     margin-bottom: 71px;
+    max-width: none !important;
+    width: 700px;
   }
   @screen scroll {
     left: unset;
@@ -440,10 +467,10 @@ form {
     background-position: 0 71px;
     // transform: none;
     figure {
-      width: 315px;
-      height: 663px;
+      width: 615px;
+      // height: 663px;
     }
-    img {
+    img, video {
       width: 315px;
       height: 663px;
       transform: translate(98px);
@@ -454,8 +481,9 @@ form {
 .scrolling {
   @screen lg {
     @apply fixed top-0;
-    transform: translate(98px, 0) !important;
-    img {
+    box-shadow: 2px 4px 0px #ff00ff, -6px -8px 0px #00ff00, -1px 3px 5px #00ffff, 7px -9px 0 black;
+    transform: translate(98px, 0) rotate(33deg) !important;
+    img, video {
       opacity: 1 !important;
       // transform: none;
     }
@@ -478,7 +506,8 @@ form {
     @apply mb-12;
   }
   .wp-block-button__link {
-    background: #728694;
+    background: #ff00ff;
+    text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ff00, -2px 2px 0px #00ffff, 2px -2px 0 black;
     @apply rounded-full;
     width: 250px;
   }
