@@ -46,7 +46,6 @@ export default {
   },
   created() {},
   mounted() {
-
     // $("a").each(function () {
     //   $(this).attr("target", "_blank");
     // });
@@ -73,13 +72,13 @@ export default {
         let phone = $(".scroller").outerHeight();
         let tri = $(".tri-top").offset().top;
         let bottom = tri - phone;
-        let one = $("#one-copy").offset().top;
+        let one = $("#one-copy").offset().top + 500;
         let winHeight = $(window).innerHeight();
         one = one - winHeight;
-        let two = $("#two-copy").offset().top;
+        let two = $("#two-copy").offset().top + 500;
         two = two - winHeight;
-        // let three = $("#three-copy").offset().top;
-        // three = three - winHeight;
+        let three = $("#three-copy").offset().top + 500;
+        three = three - winHeight;
         // let four = $("#four-copy").offset().top;
         // four = four - winHeight;
         // let five = $("#five-copy").offset().top;
@@ -97,20 +96,18 @@ export default {
           $(".scroller").find("video").attr("src", master);
         }
         if (scrolly > one) {
-          let target = $("#one").find("video").attr("src");
-          console.log("one", target);
-          $(".scroller").find("video").attr("src", target);
+          // let target = $("#one").find("video").attr("src");
+          // console.log("one", target);
+          // $(".scroller").find("video").attr("src", target);
+          $(".scrolling").addClass("down");
+          $("#one").addClass("up");
         }
         if (scrolly > two) {
-          let target = $("#two").find("video").attr("src");
-          console.log("two", target);
-          $(".scroller").find("video").attr("src", target);
+          $("#two").addClass("up");
         }
-        // if (scrolly > three) {
-        //   let target = $("#three").find("video").attr("src");
-        //   console.log("three", target);
-        //   $(".scroller").find("video").attr("src", target);
-        // }
+        if (scrolly > three) {
+          $("#three").addClass("up");
+        }
 
         // if (scrolly > four) {
         //   let target = $("#four").find("video").attr("src");
@@ -189,22 +186,59 @@ export default {
 };
 </script>
 <style lang="scss">
-h1 {
+#one {
+  transition: all 0.3s linear;
+  box-shadow: 2px 4px 0px #ff00ff, -6px -8px 0px #00ff00, -1px 3px 5px #00ffff,
+    7px -9px 0 black;
+}
+#two {
+  transition: all 0.3s linear;
+  box-shadow: 2px 4px 0px #ff00ff, -6px -8px 0px #00ff00, -1px 3px 5px #00ffff,
+    7px -9px 0 black;
+}
+#three {
+  transition: all 0.3s linear;
+  box-shadow: 2px 4px 0px #ff00ff, -6px -8px 0px #00ff00, -1px 3px 5px #00ffff,
+    7px -9px 0 black;
+  @apply z-30;
+}
+.up {
+  &#one {
+    @apply fixed z-30;
+    bottom: 33%;
+    transform: rotate(-12deg) scale(1.2);
+  }
+  &#two {
+    @apply fixed right-0 bottom-0 z-30;
+    transform: translate(-33%, -50%) rotate(22deg) scale(1.3);
+  }
+  &#three {
+    @apply fixed top-0 right-0 z-40;
+    transform: translate(-13%, 60%) rotate(-17deg) scale(1.3);
+  }
+}
+h1, h2 {
   font-family: "vcr";
-    text-shadow: 2px 2px 0px black, -2px -2px 0px black, -2px 2px 0px black, 2px -2px 0 black;
-    &:hover {
-    text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ff00, -2px 2px 0px #00ffff, 2px -2px 0 black;
+  font-size: 52px;
+  text-shadow: 2px 2px 0px black, -2px -2px 0px black, -2px 2px 0px black,
+    2px -2px 0 black;
+  &:hover {
+    text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ff00,
+      -2px 2px 0px #00ffff, 2px -2px 0 black;
     color: black !important;
     transition: all 0.3s linear;
-
-    }
+  }
   &#depression-1998 {
     font-size: 5vw;
     @apply absolute cursor-pointer;
     top: 50%;
     left: 50%;
   }
-
+}
+h2 {
+  font-size: 20px;
+  color: #ff00ff !important;
+  text-shadow: 2px 2px 0 #00ffff;
 }
 .night {
   video {
@@ -248,7 +282,8 @@ h1 {
 }
 .scroll-pane {
   @apply flex items-center justify-center;
-  img, video {
+  img,
+  video {
     width: 315px;
     transform: translate(47px);
     opacity: 0;
@@ -261,9 +296,10 @@ body {
   p {
     @apply p-2 rounded-full;
     background: blue;
-    color: black !important;;
+    color: black !important;
     font-size: 3vw;
-    text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ff00, -2px 2px 0px #00ffff, 2px -2px 0 black;
+    text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ff00,
+      -2px 2px 0px #00ffff, 2px -2px 0 black;
   }
 }
 input,
@@ -296,7 +332,8 @@ form {
   }
 }
 .wp-block-columns {
-  @apply pt-48 px-0 max-w-5xl mx-auto;
+  @apply px-0 max-w-5xl mx-auto;
+  padding-bottom: 500px;
   h4 {
     @apply font-bold uppercase mb-4;
     color: #008080;
@@ -319,10 +356,11 @@ form {
 .blue-hollow {
   .wp-block-button__link {
     background: none;
-    border: 2px solid #adcce0;
-    width: 250px;
+    border: 2px solid #00ff00;
     letter-spacing: 1px;
-    color: #adcce0;
+    color: #00ff00;
+    font-size: 24px;
+    text-shadow: 2px 2px 0 black;
   }
 }
 .partner {
@@ -470,7 +508,8 @@ form {
       width: 615px;
       // height: 663px;
     }
-    img, video {
+    img,
+    video {
       width: 315px;
       height: 663px;
       transform: translate(98px);
@@ -480,10 +519,12 @@ form {
 }
 .scrolling {
   @screen lg {
-    @apply fixed top-0;
-    box-shadow: 2px 4px 0px #ff00ff, -6px -8px 0px #00ff00, -1px 3px 5px #00ffff, 7px -9px 0 black;
+    @apply fixed top-0 z-10;
+    box-shadow: 2px 4px 0px #ff00ff, -6px -8px 0px #00ff00, -1px 3px 5px #00ffff,
+      7px -9px 0 black;
     transform: translate(98px, 0) rotate(33deg) !important;
-    img, video {
+    img,
+    video {
       opacity: 1 !important;
       // transform: none;
     }
@@ -507,7 +548,8 @@ form {
   }
   .wp-block-button__link {
     background: #ff00ff;
-    text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ff00, -2px 2px 0px #00ffff, 2px -2px 0 black;
+    text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ff00,
+      -2px 2px 0px #00ffff, 2px -2px 0 black;
     @apply rounded-full;
     width: 250px;
   }
