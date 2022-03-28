@@ -232,7 +232,7 @@ h1, h2 {
   &#depression-1998,
   &#dc-head {
     font-size: 5vw;
-    @apply absolute cursor-pointer z-10;
+    @apply absolute cursor-pointer z-10 underline;
     top: 50%;
     left: 50%;
   }
@@ -445,6 +445,9 @@ form {
 }
 .wp-block-group {
   @apply relative;
+  iframe {
+    width: 100%;
+  }
 }
 
 .scroll-start {
