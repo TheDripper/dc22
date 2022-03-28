@@ -130,6 +130,7 @@ export default {
           // let target = $('#six').find('img').attr('src');
           // console.log('six',target);
           $(".scroller").addClass("done");
+          $(".up").addClass("done");
           $(".done-img").addClass("open");
         } else {
           $(".scroller").removeClass("done");
@@ -228,7 +229,8 @@ h1, h2 {
     color: black !important;
     transition: all 0.3s linear;
   }
-  &#depression-1998 {
+  &#depression-1998,
+  &#dead-customer {
     font-size: 5vw;
     @apply absolute cursor-pointer;
     top: 50%;
@@ -360,7 +362,6 @@ form {
     letter-spacing: 1px;
     color: #00ff00;
     font-size: 24px;
-    text-shadow: 2px 2px 0 black;
   }
 }
 .partner {
