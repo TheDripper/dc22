@@ -70,7 +70,7 @@ export default {
           height = height - 75;
         }
         let phone = $(".scroller").outerHeight();
-        let tri = $(".tri-top").offset().top;
+        let tri = $("#dead-customer").offset().top;
         let bottom = tri - phone;
         let one = $("#one-copy").offset().top + 500;
         let winHeight = $(window).innerHeight();
@@ -230,9 +230,9 @@ h1, h2 {
     transition: all 0.3s linear;
   }
   &#depression-1998,
-  &#dead-customer {
+  &#dc-head {
     font-size: 5vw;
-    @apply absolute cursor-pointer;
+    @apply absolute cursor-pointer z-10;
     top: 50%;
     left: 50%;
   }
@@ -438,41 +438,10 @@ form {
     background: #4c4741;
   }
 }
-.tri-top {
+#dead-customer {
   @apply relative;
-  min-height: 1013px;
-  h1 {
-    @apply text-center font-thin uppercase;
-    font-size: 40px;
-  }
-  h2 {
-    @apply text-center font-thin;
-    font-size: 28px !important;
-  }
-  .wp-block-column {
-    @apply flex flex-col items-center justify-start;
-    p {
-      @apply text-center;
-    }
-  }
-  &:after {
-    content: "";
-    background: url("/tri-top.svg");
-    background-size: cover;
-    background-position: center bottom;
-    width: 100vw;
-    height: 512px;
-    @apply absolute bottom-0 left-0;
-  }
-  .wp-block-buttons {
-    @apply flex items-center justify-center;
-    .wp-block-button__link {
-      background: none;
-      border: 2px solid white;
-      width: 250px;
-      letter-spacing: 1px;
-    }
-  }
+  // min-height: 1013px;
+  
 }
 
 .scroll-start {
