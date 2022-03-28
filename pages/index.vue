@@ -443,6 +443,9 @@ form {
   // min-height: 1013px;
   
 }
+.wp-block-group {
+  @apply relative;
+}
 
 .scroll-start {
   @apply relative;
