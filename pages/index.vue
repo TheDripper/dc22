@@ -205,20 +205,29 @@ export default {
 }
 .up {
   &#one {
-    @apply fixed z-30;
-    bottom: 33%;
+    @apply fixed  z-30;
+    top: 50%;
+    right: 0;
     transform: rotate(-12deg) scale(1.2);
   }
   &#two {
-    @apply fixed right-0 bottom-0 z-30;
+    @apply fixed  z-40;
+    top: 50%;
+    right: 0;
     transform: translate(-33%, -50%) rotate(22deg) scale(1.3);
   }
   &#three {
-    @apply fixed top-0 right-0 z-40;
+    @apply fixed  z-50;
+    top: 50%;
+    right: 0;
     transform: translate(-13%, 60%) rotate(-17deg) scale(1.3);
   }
 }
-h1, h2 {
+h1 {
+  @apply p-4 mb-4;
+}
+h1,
+h2 {
   font-family: "vcr";
   font-size: 52px;
   text-shadow: 2px 2px 0px black, -2px -2px 0px black, -2px 2px 0px black,
@@ -295,13 +304,17 @@ h2 {
 html,
 body {
   font-family: "vcr";
+  h2 {
+    color: #ff00ff;
+  }
   p {
-    @apply p-2 rounded-full;
+    @apply p-4;
     background: blue;
-    color: black !important;
+  }
+  h2 {
+    @apply p-4;
+    background: blue;
     font-size: 3vw;
-    text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ff00,
-      -2px 2px 0px #00ffff, 2px -2px 0 black;
   }
 }
 input,
@@ -335,7 +348,7 @@ form {
 }
 .wp-block-columns {
   @apply px-0 max-w-5xl mx-auto;
-  padding-bottom: 500px;
+  padding: 300px 0;
   h4 {
     @apply font-bold uppercase mb-4;
     color: #008080;
@@ -355,15 +368,15 @@ form {
     @apply mb-6;
   }
 }
-.blue-hollow {
-  .wp-block-button__link {
-    background: none;
-    border: 2px solid #00ff00;
-    letter-spacing: 1px;
-    color: #00ff00;
-    font-size: 24px;
-  }
-}
+// .blue-hollow {
+//   .wp-block-button__link {
+//     border-radius: 0 !important;
+//     background: blue;
+//     letter-spacing: 1px;
+//     color: white;
+//     font-size: 24px;
+//   }
+// }
 .partner {
   height: 750px;
 }
@@ -441,7 +454,6 @@ form {
 #dead-customer {
   @apply relative;
   // min-height: 1013px;
-  
 }
 .wp-block-group {
   @apply relative;
@@ -455,7 +467,7 @@ form {
   left: 50%;
   overflow: visible;
   margin: 0 !important;
-  margin-top: 160px !important;
+  // margin-top: 160px !important;
   // width: 323px;
   // height: 544px;
   min-height: 544px;
@@ -507,7 +519,6 @@ form {
   }
 }
 .hero {
-  min-height: 750px;
   .wp-block-columns {
     @apply flex-col items-start;
     @screen scroll {
@@ -522,13 +533,17 @@ form {
   p {
     @apply mb-12;
   }
-  .wp-block-button__link {
-    background: #ff00ff;
-    text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ff00,
-      -2px 2px 0px #00ffff, 2px -2px 0 black;
-    @apply rounded-full;
-    width: 250px;
-  }
+}
+.bg-blue {
+  text-shadow: none !important;
+}
+.wp-block-button__link {
+  color: #ff00ff !important;
+  background: blue;
+  width: 250px;
+  text-shadow: 2px 2px 0 #00ffff;
+  font-size: 24px;
+  border-radius: 0 !important;
 }
 
 .text-img {

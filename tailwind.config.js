@@ -21,7 +21,7 @@ module.exports = {
         photo: "50rem",
       },
       colors: {
-        blue: "#0f66ff",
+        blue: "#0000ff",
         white: "#fff",
         pink: "#ef4300",
         yellow: "#B8C734",
