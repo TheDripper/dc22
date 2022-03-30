@@ -208,28 +208,26 @@ export default {
     @apply fixed  z-30;
     top: 50%;
     right: 0;
-    transform: rotate(-12deg) scale(1.2);
   }
   &#two {
     @apply fixed  z-40;
     top: 50%;
     right: 0;
-    transform: translate(-33%, -50%) rotate(22deg) scale(1.3);
   }
   &#three {
     @apply fixed  z-50;
     top: 50%;
     right: 0;
-    transform: translate(-13%, 60%) rotate(-17deg) scale(1.3);
   }
 }
 h1 {
   @apply p-4 mb-4;
+  font-size: 48px;
+  line-height: 1;
 }
 h1,
 h2 {
   font-family: "vcr";
-  font-size: 52px;
   text-shadow: 2px 2px 0px black, -2px -2px 0px black, -2px 2px 0px black,
     2px -2px 0 black;
   &:hover {
@@ -347,8 +345,7 @@ form {
   }
 }
 .wp-block-columns {
-  @apply px-0 max-w-5xl mx-auto;
-  padding: 300px 0;
+  @apply px-0 max-w-5xl mx-auto flex items-center justify-center;
   h4 {
     @apply font-bold uppercase mb-4;
     color: #008080;
@@ -455,13 +452,20 @@ form {
   @apply relative;
   // min-height: 1013px;
 }
+.episode {
+  height: 400px !important;
+  max-height: 400px !important;
+  overflow: hidden !important;
+}
 .wp-block-group {
   @apply relative;
   iframe {
     width: 100%;
   }
 }
-
+.wp-block-cover {
+  min-height: none !important;
+}
 .scroll-start {
   @apply relative;
   left: 50%;
@@ -470,7 +474,7 @@ form {
   // margin-top: 160px !important;
   // width: 323px;
   // height: 544px;
-  min-height: 544px;
+  // min-height: 544px;
   background: url("/bridge.png");
   // background-size: 225px;
   background-repeat: no-repeat;
@@ -478,8 +482,6 @@ form {
   figure {
     @apply m-0;
     transition: all 0.5s ease-in-out;
-    transform: translate(47px, -71px);
-    margin-bottom: 71px;
     max-width: none !important;
     width: 700px;
   }
@@ -518,22 +520,7 @@ form {
     }
   }
 }
-.hero {
-  .wp-block-columns {
-    @apply flex-col items-start;
-    @screen scroll {
-      @apply flex-row;
-    }
-  }
-  h1 {
-    font-size: 52px;
-    @apply uppercase mb-4;
-    line-height: 1;
-  }
-  p {
-    @apply mb-12;
-  }
-}
+
 .bg-blue {
   text-shadow: none !important;
 }
