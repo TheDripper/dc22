@@ -453,8 +453,6 @@ form {
   // min-height: 1013px;
 }
 .episode {
-  height: 400px !important;
-  max-height: 400px !important;
   overflow: hidden !important;
 }
 .wp-block-group {
