@@ -239,7 +239,7 @@ h2 {
   &#depression-1998,
   &#dc-head {
     font-size: 5vw;
-    @apply absolute cursor-pointer z-10 underline;
+    @apply absolute cursor-pointer z-10;
     top: 50%;
     left: 50%;
   }
