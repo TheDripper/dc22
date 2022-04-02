@@ -206,7 +206,9 @@ h1 {
   font-size: 48px;
   line-height: 1;
 }
-h1, h2, p {
+h1,
+h2,
+p {
   padding: 0 !important;
   margin: 0 !important;
 }
@@ -501,6 +503,9 @@ form {
 #grabbed {
   height: 500px;
   overflow: hidden !important;
+  iframe {
+    height: 500px;
+  }
 }
 .wp-block-column {
   max-width: 800px;
