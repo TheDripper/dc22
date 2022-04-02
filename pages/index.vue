@@ -61,52 +61,44 @@ export default {
         $(this).addClass("unmuted");
       }
     });
-    let master = $(".scroller").find("video").attr("src");
     $(window).on("scroll", function (e) {
       if ($(window).innerWidth() > 767) {
         console.log($(window).innerWidth());
         let height = $(".scroll-start").offset().top;
-        if ($(window).innerWidth() < 1152) {
-          height = height - 75;
-        }
-        let phone = $(".scroller").outerHeight();
-        let tri = $("#dead-customer").offset().top;
-        let bottom = tri - phone;
-        let one = $("#one-copy").offset().top + 500;
+        // let phone = $(".scroller").outerHeight();
+        let bottom = $("#dead-customer").offset().top;
+        let one = $("#one").offset().top;
         let winHeight = $(window).innerHeight();
         one = one - winHeight;
-        let two = $("#two-copy").offset().top + 500;
+        let two = $("#two").offset().top;
         two = two - winHeight;
-        let three = $("#three-copy").offset().top + 500;
+        let three = $("#three").offset().top;
         three = three - winHeight;
-        // let four = $("#four-copy").offset().top;
-        // four = four - winHeight;
+        let four = $("#four").offset().top;
+        four = four - winHeight;
         // let five = $("#five-copy").offset().top;
         // five = five - winHeight;
         // let six = $("#six-copy").offset().top;
         // six = six - winHeight;
         // let masterImg = $('img').attr('src',master);
-        $(".scroller").find("video").attr("srcset", null);
+        // $(".scroller").find("video").attr("srcset", null);
         let scrolly = $(document).scrollTop();
         if (scrolly > height) {
-          $(".scroller").addClass("scrolling");
+          // $(".scroller").addClass("scrolling");
         } else {
-          $(".scroller").removeClass("scrolling");
-          console.log("master", master);
-          $(".scroller").find("video").attr("src", master);
-        }
-        if (scrolly > one) {
-          // let target = $("#one").find("video").attr("src");
-          // console.log("one", target);
-          // $(".scroller").find("video").attr("src", target);
-          $(".scrolling").addClass("down");
-          $("#one").addClass("up");
+          // $(".scroller").removeClass("scrolling");
         }
         if (scrolly > two) {
+          $(".up").removeClass("up");
           $("#two").addClass("up");
         }
         if (scrolly > three) {
+          $(".up").removeClass("up");
           $("#three").addClass("up");
+        }
+        if (scrolly > four) {
+          $(".up").removeClass("up");
+          $("#four").addClass("up");
         }
 
         // if (scrolly > four) {
@@ -203,45 +195,42 @@ export default {
     7px -9px 0 black;
   @apply z-30;
 }
-.up {
-  &#one {
-    @apply fixed  z-30;
-    top: 50%;
-    right: 0;
-  }
-  &#two {
-    @apply fixed  z-40;
-    top: 50%;
-    right: 0;
-  }
-  &#three {
-    @apply fixed  z-50;
-    top: 50%;
-    right: 0;
-  }
+#four {
+  transition: all 0.3s linear;
+  box-shadow: 2px 4px 0px #ff00ff, -6px -8px 0px #00ff00, -1px 3px 5px #00ffff,
+    7px -9px 0 black;
+  @apply z-30;
 }
 h1 {
   @apply p-4 mb-4;
   font-size: 48px;
   line-height: 1;
 }
+h1, h2, p {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+p {
+  font-size: 36px;
+}
 h1,
 h2 {
   font-family: "vcr";
   text-shadow: 2px 2px 0px black, -2px -2px 0px black, -2px 2px 0px black,
     2px -2px 0 black;
-  &:hover {
-    text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ff00,
-      -2px 2px 0px #00ffff, 2px -2px 0 black;
-    color: black !important;
-    transition: all 0.3s linear;
-  }
+
   &#depression-1998,
   &#dc-head {
     font-size: 5vw;
     @apply absolute cursor-pointer z-10;
     top: 50%;
     left: 50%;
+    &:hover {
+      text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ff00,
+        -2px 2px 0px #00ffff, 2px -2px 0 black;
+      color: black !important;
+      transition: all 0.3s linear;
+    }
   }
 }
 h2 {
@@ -454,6 +443,7 @@ form {
 }
 .episode {
   overflow: hidden !important;
+  @apply h-screen w-screen;
 }
 .wp-block-group {
   @apply relative;
@@ -505,12 +495,21 @@ form {
     }
   }
 }
+.wp-block-columns {
+  @apply flex justify-center items-center;
+}
+.wp-block-column {
+  max-width: 800px;
+  &:last-child {
+    display: none !important;
+    @apply hidden;
+  }
+}
 .scrolling {
   @screen lg {
-    @apply fixed top-0 z-10;
+    @apply fixed top-0 left-0 z-10;
     box-shadow: 2px 4px 0px #ff00ff, -6px -8px 0px #00ff00, -1px 3px 5px #00ffff,
       7px -9px 0 black;
-    transform: translate(98px, 0) rotate(33deg) !important;
     img,
     video {
       opacity: 1 !important;
@@ -524,11 +523,22 @@ form {
 }
 .wp-block-button__link {
   color: #ff00ff !important;
-  background: blue;
+  background: black;
   width: 250px;
   text-shadow: 2px 2px 0 #00ffff;
   font-size: 24px;
   border-radius: 0 !important;
+  font-family: "vcr";
+  text-shadow: 2px 2px 0px black, -2px -2px 0px black, -2px 2px 0px black,
+    2px -2px 0 black;
+  &:hover {
+    text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ff00,
+      -2px 2px 0px #00ffff, 2px -2px 0 black;
+    color: black !important;
+    transition: all 0.3s linear;
+    transform: translate(5px);
+    background: #00ffff !important;
+  }
 }
 
 .text-img {
