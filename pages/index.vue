@@ -498,6 +498,10 @@ form {
 .wp-block-columns {
   @apply flex justify-center items-center;
 }
+#grabbed {
+  height: 500px;
+  overflow: hidden !important;
+}
 .wp-block-column {
   max-width: 800px;
   &:last-child {
