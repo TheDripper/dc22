@@ -236,7 +236,8 @@ h2 {
 
   &#depression-1998,
   &#dc-head,
-  &#ADHD-head {
+  &#ADHD-head,
+  &#uppfri-head {
     font-size: 5vw;
     @apply absolute cursor-pointer z-10;
     top: 50%;
@@ -513,6 +514,13 @@ form {
 }
 .wp-block-columns {
   @apply flex justify-center items-center;
+}
+#uppfri {
+  height: 600px;
+  overflow: hidden !important;
+  iframe {
+    height: 600px;
+  }
 }
 #grabbed {
   height: 500px;
