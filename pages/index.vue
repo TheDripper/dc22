@@ -203,8 +203,18 @@ export default {
 }
 h1 {
   @apply p-4 mb-4;
+  font-size: 24px;
+  @screen lg {
   font-size: 48px;
+  }
   line-height: 1;
+}
+
+#ADHDHTTP {
+  height: 440px;
+  iframe {
+    height: 440px;
+  }
 }
 h1,
 h2,
@@ -213,7 +223,10 @@ p {
   margin: 0 !important;
 }
 p {
+  font-size: 14px;
+  @screen lg {
   font-size: 36px;
+  }
 }
 h1,
 h2 {
@@ -222,7 +235,8 @@ h2 {
     2px -2px 0 black;
 
   &#depression-1998,
-  &#dc-head {
+  &#dc-head,
+  &#ADHD-head {
     font-size: 5vw;
     @apply absolute cursor-pointer z-10;
     top: 50%;
