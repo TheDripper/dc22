@@ -175,6 +175,23 @@ export default {
 };
 </script>
 <style lang="scss">
+#get-outside-frame {
+  overflow: scroll;
+  @apply h-screen w-screen;
+  figure, iframe {
+    height: 100vh !important;
+    max-width: none !important;
+  }
+}
+#get-outside {
+  @apply absolute w-full uppercase;
+  font-family: "vcr";
+  font-size: 30px;
+  text-shadow: 2px 4px 0px black, -6px -2px 0 black, -4px 4px 0 black, 2px -2px 0 black;
+  top: 0;
+  left: 0;
+  // transform: translate(-50%, -50%);
+}
 .unmute {
   @apply absolute;
   left: 50%;

@@ -205,7 +205,7 @@ h1 {
   @apply p-4 mb-4;
   font-size: 24px;
   @screen lg {
-  font-size: 48px;
+    font-size: 48px;
   }
   line-height: 1;
 }
@@ -225,7 +225,7 @@ p {
 p {
   font-size: 14px;
   @screen lg {
-  font-size: 36px;
+    font-size: 36px;
   }
 }
 h1,
@@ -515,6 +515,7 @@ form {
 .wp-block-columns {
   @apply flex justify-center items-center;
 }
+
 #uppfri {
   height: 600px;
   overflow: hidden !important;
