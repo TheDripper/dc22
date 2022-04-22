@@ -237,7 +237,8 @@ h2 {
   &#depression-1998,
   &#dc-head,
   &#ADHD-head,
-  &#uppfri-head {
+  &#uppfri-head,
+  &#social-media-marketing-head {
     font-size: 5vw;
     @apply absolute cursor-pointer z-10;
     top: 50%;
