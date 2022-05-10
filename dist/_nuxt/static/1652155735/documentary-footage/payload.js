@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/documentary-footage", {data:[{}],fetch:{},mutations:[]});

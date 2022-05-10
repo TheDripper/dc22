@@ -2,7 +2,7 @@
   <div id="root" class="testtttt">
     <div :class="classes"></div>
     <div class="flex bg-back-grey">
-      <div id="page" class="w-full text-white">
+      <div id="page" class="w-full h-screen text-white flex items-center justify-center">
         <div :id="slug" class="frame">
           <div id="content" v-html="page" class=""></div>
         </div>
@@ -175,6 +175,19 @@ export default {
 };
 </script>
 <style lang="scss">
+.wp-block-video {
+  @apply absolute z-10;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+html, body, p {
+  font-family: "vcr";
+  @apply relative z-20;
+  font-size: 36px;
+  text-shadow: 2px 2px 0 black, -2px -2px 0 black, -2px 2px 0 black, 2px -2px 0 black;
+  }
 #get-outside-frame {
   overflow: scroll;
   @apply h-screen w-screen;
