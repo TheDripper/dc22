@@ -3,6 +3,32 @@
     <div :class="classes"></div>
     <div class="flex bg-back-grey">
       <div id="page" class="w-full text-white">
+        <div
+          class="
+            z-20
+            flex flex-nowrap
+            w-full
+            fixed
+            bottom-0
+            left-0
+            bg-black
+            slide-start
+          "
+        >
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
+        </div>
         <div :id="slug" class="frame">
           <div id="content" v-html="page" class=""></div>
         </div>
@@ -582,6 +608,24 @@ form {
     &:last-child {
       @apply flex items-center justify-center;
     }
+  }
+}
+@keyframes slide {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: -500px;
+  }
+}
+.slide-start {
+  animation: 10s linear infinite slide;
+  height: 40px;
+  background: black;
+  img {
+    width: 40px;
+    height: 40px;
+    @apply hidden;
   }
 }
 </style>
