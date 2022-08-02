@@ -10,7 +10,7 @@ export default {
   //   { path: "/server-middleware", handler: "~/server-middleware/rest.js" },
   // ],
   head: {
-    title: "dc22",
+    title: "TYLER HILL | ATTENTION DEFICIT TRANSFER PROTOCOL",
     htmlAttrs: {
       lang: "en",
     },

@@ -15,19 +15,19 @@
             slide-start
           "
         >
-          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
-          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
-          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
-          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
-          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
-          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
-          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
-          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
-          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
-          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
-          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
-          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
-          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black text-sm md:text-lg">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black text-sm md:text-lg">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black text-sm md:text-lg">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black text-sm md:text-lg">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black text-sm md:text-lg">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black text-sm md:text-lg">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black text-sm md:text-lg">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black text-sm md:text-lg">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black text-sm md:text-lg">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black text-sm md:text-lg">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black text-sm md:text-lg">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black text-sm md:text-lg">TYLER HILL</h2><img src="/check.jpg" />
+          <h2 class="px-4 flex-shrink-0 whitespace-nowrap bg-black text-sm md:text-lg">TYLER HILL</h2><img src="/check.jpg" />
         </div>
         <div :id="slug" class="frame">
           <div id="content" v-html="page" class=""></div>
@@ -620,7 +620,6 @@ form {
 }
 .slide-start {
   animation: 10s linear infinite slide;
-  height: 40px;
   background: black;
   img {
     width: 40px;
